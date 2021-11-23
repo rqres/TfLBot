@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} Results {% endblock %}
+{% block content %}
+
+
+<h1 class="display-1"> Your results </h5>
+
+{% for i in range(list_length) %}
+{% set my_string = i+1 ~ ') ' ~ jrn_list[i] ~ ' -> ' ~ "£" ~ fares_list[i] %}
+<p> {{ my_string }} </p>
+
+{% endfor %}
+
+
+<!-- <form action="#" method="post">
+	<button type="submit" value="submit"> Begin Program </button>
+</form> -->
+
+{% endblock %}

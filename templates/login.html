@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+{% block content %}
+
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<div class="container" align=center>
+	<div class="alert alert-warning col-5" role="alert">
+		<h5>{{msg}}</h5>
+	</div>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
+<div class="container" align=center>
+	<div class="col-5"><h1 class="display-6" align=center> Log into your TfL Travelcard account </h1></div>
+	
+	<form action="#" method="post">
+		<div class="col-5">
+			<label for="staticEmail2" class="visually-hidden">Email</label>
+			<input type="text" class="form-control" id="staticEmail2" placeholder="email" name="email">
+		</div>
+		<div class="col-5">
+			<label for="inputPassword2" class="visually-hidden">Password</label>
+			<input type="password" class="form-control" id="inputPassword2" placeholder="password" name="pwd">
+		</div>
+		<div class="col-5">
+			<button type="submit" class="btn btn-primary mb-3" value="submit">Log in</button>
+		</div>
+		
+	</form>
+
+</div>
+{% endblock %}

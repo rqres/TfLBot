@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %} Profile {% endblock %}
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for msg in messages %}
+<!-- <div id="loading"></div> -->
+
+<!-- <div id="content"> -->
+	<div class="container" align=center>
+		<div class="alert alert-warning col-5" role="alert">
+			<h5>{{msg}}</h5>
+		</div>
+	</div>
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+
+	<br>
+	<br>
+
+	<div class="container" align=center>
+		<h1 class="display-6"> Welcome, <mark>{{user}}</mark> </h1>
+		<form action="#" method="post">
+			<button type="submit" class="btn btn-primary btn-lg" value="submit" onclick="javascript:loading()"> Begin Program </button>
+		</form>
+	</div>
+<!-- </div> -->
+
+{% endblock %}
